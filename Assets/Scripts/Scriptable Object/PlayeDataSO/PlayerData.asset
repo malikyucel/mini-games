@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b3334621a05494982daa627a919b81, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  PlayerCoinData: 7199
+  PlayerNameData: Malik
+  playersCharacter: {fileID: 2096724092043519312, guid: 4fe27d1c51c032b4fb9dd1cf59519b17, type: 3}
+  availableCharacters:
+  - {fileID: 3611796021473850140, guid: 1e8b5e7de5335aa4b96fcdc909063dc6, type: 3}
+  - {fileID: 2985941635708384937, guid: f1f1202a39bd5244ba94e69c8c4c8611, type: 3}
+  - {fileID: 5428077624179669458, guid: 966bd10fc957fe94d8afabd655e20b39, type: 3}
+  - {fileID: 2096724092043519312, guid: 4fe27d1c51c032b4fb9dd1cf59519b17, type: 3}

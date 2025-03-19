@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactive
+  - Reset
+  - Ground
+  - Character
+  - Close
+  - CharacterSlelect
   layers:
   - Default
   - TransparentFX

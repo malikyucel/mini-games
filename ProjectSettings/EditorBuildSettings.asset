@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Games/Helix Jump.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Games/EndlessJump.unity
+    guid: d95a71c350444d64aa78ebf1dc771731
+  - enabled: 1
+    path: Assets/Scenes/ManuScene/Game Selection Scene.unity
+    guid: a57fb7a03d6f11c4d8fe0924394e5cca
+  - enabled: 1
+    path: Assets/Scenes/ManuScene/LoginScene.unity
+    guid: 9dc1327975abd484b9ae7fd2e66d603b
+  - enabled: 1
+    path: Assets/Scenes/ManuScene/CharacterSetting.unity
+    guid: dd8f0520abcff144484fc6ac6ebb3d17
   m_configObjects: {}

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178d49901eafc21459c8e412857822e0, type: 3}
+  m_Name: Characters
+  m_EditorClassIdentifier: 
+  Characters:
+  - {fileID: 4135590730175611960, guid: be141e449a6c08e4aa5e0b2243140d8b, type: 3}
+  - {fileID: 8015087173061848712, guid: 6ff0d1f253b8f6b40b8853d523782145, type: 3}
+  - {fileID: 2985941635708384937, guid: f1f1202a39bd5244ba94e69c8c4c8611, type: 3}
+  - {fileID: 4110175495983752200, guid: 9282ed52b46c5b24188fb20518b5fa58, type: 3}
+  - {fileID: 3611796021473850140, guid: 1e8b5e7de5335aa4b96fcdc909063dc6, type: 3}
+  - {fileID: 5428077624179669458, guid: 966bd10fc957fe94d8afabd655e20b39, type: 3}
+  - {fileID: 2590613932737236771, guid: 2be79993d62aa174a95405e07880651f, type: 3}
+  - {fileID: 3415369998458597390, guid: 3886217950b23244ea8770335524044d, type: 3}
+  - {fileID: 2096724092043519312, guid: 4fe27d1c51c032b4fb9dd1cf59519b17, type: 3}
+  - {fileID: 1358809369041997443, guid: 3524fdcce057ca24f88a14931a16fe0c, type: 3}
+  - {fileID: 8754683072663137, guid: 6919bf56d27965940bbd40b7d04b1252, type: 3}
+  - {fileID: 4658889406626750753, guid: 9202dd33f61baa240a0136edba9a4f1d, type: 3}
+  - {fileID: 1872293377583900588, guid: f7245042c58b81841a0d453abe8d2e67, type: 3}
+  - {fileID: 7072213787802057244, guid: 79fba29a60beee04c8ddd4fdcb7c879f, type: 3}
+  - {fileID: 5570906088257640433, guid: ebd90edc6daf5e34dbc08a31563acf2d, type: 3}
+  - {fileID: 8072610387745505301, guid: fe4e954f827608146b0293de1e75f545, type: 3}
+  - {fileID: 8275504286771553434, guid: c99e496ac709c144e8f7de215f1830d1, type: 3}
+  - {fileID: 7201766289708383100, guid: 54d195451b10087419cf66762ba8a291, type: 3}
+  - {fileID: 3429161005264286245, guid: 1fb26b42a7f6b5845a5987e6964924b4, type: 3}
+  price:
+  - 120
+  - 120
+  - 150
+  - 150
+  - 180
+  - 200
+  - 215
+  - 265
+  - 240
+  - 240
+  - 280
+  - 310
+  - 350
+  - 375
+  - 400
+  - 400
+  - 420
+  - 450
+  - 475
