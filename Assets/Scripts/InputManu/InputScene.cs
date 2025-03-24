@@ -45,7 +45,6 @@ public class InputScene : MonoBehaviour
     }
     private void SavePlayerButton()
     {
-        Debug.Log("Çalıştı");
         playerData.PlayerNameData = playerName.text;
         playerSavePanel.SetActive(false);
     }

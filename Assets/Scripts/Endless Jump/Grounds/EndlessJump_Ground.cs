@@ -60,6 +60,7 @@ public class EndlessJump_Ground : MonoBehaviour,IFunction
     }
     public void Function()
     {
+        EndlessJump_GroundManager.Instance.JumpSound();
         if(!IsTrigger)
         {
             EndlessJump_GroundManager.Instance.GroundSpawnManager();

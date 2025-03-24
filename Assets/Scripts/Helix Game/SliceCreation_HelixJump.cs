@@ -22,6 +22,7 @@ public class SliceCreate_HelixJump : MonoBehaviour
         for (float i = 0; i > _step; i -= decembe)
         {
             GameObject sliceObject = Instantiate(slices, new Vector3(0, sliceStartPosY, 0), slices.transform.rotation);
+            sliceObject.AddComponent<SliceAnim_HelixJump>();
             sliceObject.transform.SetParent(parentObject.transform);
             sliceStartPosY -= decembe;
             interactiveCount = Random.Range(1,4);

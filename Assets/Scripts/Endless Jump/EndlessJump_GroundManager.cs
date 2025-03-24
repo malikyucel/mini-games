@@ -6,6 +6,9 @@ public class EndlessJump_GroundManager : MonoBehaviour
     [Header("Refenence")]
     [SerializeField] private GameObject ground;
     [SerializeField] private GameObject obstacle;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip dropSound;
 
     [Header("Setting")]
     [SerializeField] private int difficulity;
@@ -54,6 +57,15 @@ public class EndlessJump_GroundManager : MonoBehaviour
             yield return new WaitForSeconds(difficulityTime);
             difficulity--;
         }
-        
     }
+
+    public void JumpSound()
+    {
+        audioSource.PlayOneShot(jumpSound);
+    }
+    public void DropSound()
+    {
+        audioSource.PlayOneShot(dropSound);
+    }
+    
 }

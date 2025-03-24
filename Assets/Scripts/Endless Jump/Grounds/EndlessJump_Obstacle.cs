@@ -53,6 +53,7 @@ public class EndlessJump_Obstacle : MonoBehaviour,IFunction
 
     public void Function()
     {
+        EndlessJump_GroundManager.Instance.DropSound();
         if(playerCoin.PlayerCoinData < deductCoin)
         {
             playerCoin.PlayerCoinData = 0;
@@ -61,6 +62,11 @@ public class EndlessJump_Obstacle : MonoBehaviour,IFunction
         {
             playerCoin.PlayerCoinData -= deductCoin;
         }
+        StartCoroutine(SceneLoadTime());
+    }
+    IEnumerator SceneLoadTime()
+    {
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(Conts.Scenes.ENDLESS_JUMP_SCENE);
     }
 }

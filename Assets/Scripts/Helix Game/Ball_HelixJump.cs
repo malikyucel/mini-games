@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +26,7 @@ public class Ball_HelixJump : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Ground") && IsJumping)
         {
+            SliceSound.Instanse.Slice();
             playerRb.velocity = Vector3.zero;
             playerRb.AddForce(Vector3.up * jumpForce);
             Invoke(nameof(RessetJump), 0.2f);
@@ -32,6 +34,7 @@ public class Ball_HelixJump : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Interactive"))
         {
+            SliceSound.Instanse.RedSlice();
             if(playerCoinNameSO.PlayerCoinData < playerCoinReduce)
             {
                 playerCoinNameSO.PlayerCoinData = 0;
@@ -40,13 +43,26 @@ public class Ball_HelixJump : MonoBehaviour
             {
                 playerCoinNameSO.PlayerCoinData -= playerCoinReduce;
             }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(InterfaceSceneTime());
         }
         else if(other.gameObject.CompareTag("Reset"))
         {
+            SliceSound.Instanse.FinishSlice();
+            StartCoroutine(ResetSceneTime());
             playerCoinNameSO.PlayerCoinData += playerCoinPuls;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         } 
+    }
+
+    IEnumerator ResetSceneTime()
+    {
+        yield return new WaitForSeconds(0.2f);
+        playerCoinNameSO.PlayerCoinData += playerCoinPuls;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    IEnumerator InterfaceSceneTime()
+    {
+        yield return new WaitForSeconds(0.2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     void RessetJump()
     {

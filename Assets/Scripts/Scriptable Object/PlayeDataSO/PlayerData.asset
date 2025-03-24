@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b3334621a05494982daa627a919b81, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  PlayerCoinData: 7199
+  PlayerCoinData: 19
   PlayerNameData: Malik
-  playersCharacter: {fileID: 2096724092043519312, guid: 4fe27d1c51c032b4fb9dd1cf59519b17, type: 3}
+  playersCharacter: {fileID: 4135590730175611960, guid: be141e449a6c08e4aa5e0b2243140d8b, type: 3}
   availableCharacters:
   - {fileID: 3611796021473850140, guid: 1e8b5e7de5335aa4b96fcdc909063dc6, type: 3}
-  - {fileID: 2985941635708384937, guid: f1f1202a39bd5244ba94e69c8c4c8611, type: 3}
-  - {fileID: 5428077624179669458, guid: 966bd10fc957fe94d8afabd655e20b39, type: 3}
-  - {fileID: 2096724092043519312, guid: 4fe27d1c51c032b4fb9dd1cf59519b17, type: 3}
+  - {fileID: 4135590730175611960, guid: be141e449a6c08e4aa5e0b2243140d8b, type: 3}
+  - {fileID: 1358809369041997443, guid: 3524fdcce057ca24f88a14931a16fe0c, type: 3}
+  - {fileID: 3415369998458597390, guid: 3886217950b23244ea8770335524044d, type: 3}

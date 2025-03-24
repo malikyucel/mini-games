@@ -10,6 +10,6 @@ public class CameraController_HelixJump : MonoBehaviour
 
     private void Update() 
     {
-        transform.position = Vector3.Lerp(transform.position, target.transform.position + offSet, followSpeed); 
+        transform.position = Vector3.Lerp(transform.position, target.transform.position + offSet, followSpeed * Time.deltaTime); 
     }
 }

@@ -28,7 +28,7 @@ public class EndlessJump_UI : MonoBehaviour
     {
         playerCoinName.text = "Name: " + playerData.PlayerNameData + "\nCoin: " + playerData.PlayerCoinData;
     }
-    void MenuPanelButton()
+    public void MenuPanelButton()
     {
         Time.timeScale = 0f;
         menuPanel.SetActive(true);

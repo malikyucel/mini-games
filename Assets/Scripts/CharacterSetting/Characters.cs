@@ -11,10 +11,12 @@ public class Characters : MonoBehaviour
     [SerializeField] private CharacterSO characterSO;
 
     [Header("UI Elements")]
-    [SerializeField] private GameObject purchasePanel;
+    [SerializeField] private GameObject buyPanel;
+    [SerializeField] private GameObject purchasedPanel;
     [SerializeField] private TMP_Text priceText;
     [SerializeField] private Button closeButton;
     [SerializeField] private Button buyButton;
+    [SerializeField] private Button purchasedButton;
 
     [Header("Character Properties")]
     [SerializeField] private float price;
@@ -54,6 +56,7 @@ public class Characters : MonoBehaviour
 
         closeButton.onClick.AddListener(ClosePanelButton);
         buyButton.onClick.AddListener(BuyButton);
+        purchasedButton.onClick.AddListener(Purchased);
 
         InstantiateCharacters();
 
@@ -79,7 +82,7 @@ public class Characters : MonoBehaviour
                 if(hit.transform.CompareTag("Character"))
                 {
                     selectInActive = false;
-                    purchasePanel.SetActive(true);
+                    buyPanel.SetActive(true);
 
                     GameObject _selectCharacter = hit.transform.gameObject;
 
@@ -196,7 +199,7 @@ public class Characters : MonoBehaviour
     #region Buttons
     void ClosePanelButton()
     {
-        purchasePanel.SetActive(false);
+        buyPanel.SetActive(false);
         selectInActive = true;
     }
     void BuyButton()
@@ -219,8 +222,16 @@ public class Characters : MonoBehaviour
                 playersCharacter.availableCharacters.Add(characterSO.Characters[_selecetObject]);
                 priceText.text = playersCharacter.PlayerCoinData + " Coin" + "\nPrice: " + purchasePrice;
                 playersCharacter.playersCharacter = characterSO.Characters[_selecetObject];
+                
+                buyPanel.SetActive(false);
+                purchasedPanel.SetActive(true);
             }
         }
+    }
+    void Purchased()
+    {
+        purchasedPanel.SetActive(false);
+        selectInActive = true;
     }
     #endregion
 }

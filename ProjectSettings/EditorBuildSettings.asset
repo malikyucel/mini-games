@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ManuScene/CharacterSetting.unity
     guid: dd8f0520abcff144484fc6ac6ebb3d17
+  - enabled: 1
+    path: Assets/Scenes/Games/Color Run.unity
+    guid: 714a4b70269233b4187374ec7986b395
   m_configObjects: {}

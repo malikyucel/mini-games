@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +18,13 @@ public class EndlessJump_DestroyObject : MonoBehaviour, IFunction
         {
             playerCoin.PlayerCoinData -= deductCoin;
         }
+        StartCoroutine(SceneLoadTime());
+    }
+
+    IEnumerator SceneLoadTime()
+    {
+        EndlessJump_GroundManager.Instance.DropSound();
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(Conts.Scenes.ENDLESS_JUMP_SCENE);
     }
 }

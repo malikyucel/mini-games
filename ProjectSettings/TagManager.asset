@@ -10,6 +10,7 @@ TagManager:
   - Character
   - Close
   - CharacterSlelect
+  - TrueDoor
   layers:
   - Default
   - TransparentFX
