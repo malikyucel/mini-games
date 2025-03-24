@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -82,6 +83,7 @@ public class Characters : MonoBehaviour
                 if(hit.transform.CompareTag("Character"))
                 {
                     selectInActive = false;
+                    buyPanel.transform.DOScale(Vector3.zero, 0.5f).From().SetEase(Ease.OutBack);
                     buyPanel.SetActive(true);
 
                     GameObject _selectCharacter = hit.transform.gameObject;
@@ -225,6 +227,7 @@ public class Characters : MonoBehaviour
                 
                 buyPanel.SetActive(false);
                 purchasedPanel.SetActive(true);
+                purchasedPanel.transform.DOScale(Vector3.zero, 1f).From().SetEase(Ease.OutBack);
             }
         }
     }

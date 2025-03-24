@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UI_HelixJump : MonoBehaviour
 {
@@ -30,7 +31,8 @@ public class UI_HelixJump : MonoBehaviour
     }
     void MenuPanelButton()
     {
-        Time.timeScale = 0f;
+        Invoke(nameof(timeScene),0.4f);
+        menuPanel.transform.DOScale(Vector3.zero, 0.5f).From().SetEase(Ease.OutBack);
         menuPanel.SetActive(true);
     }
     void ResetButton()
@@ -47,5 +49,9 @@ public class UI_HelixJump : MonoBehaviour
     void ExetButton()
     {
         SceneManager.LoadScene(Conts.Scenes.GAMES_SELECTİON_SCENE);
+    }
+    void timeScene()
+    {
+        Time.timeScale = 0f;
     }
 }
