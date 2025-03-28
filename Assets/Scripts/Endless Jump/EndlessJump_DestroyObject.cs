@@ -27,4 +27,7 @@ public class EndlessJump_DestroyObject : MonoBehaviour, IFunction
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(Conts.Scenes.ENDLESS_JUMP_SCENE);
     }
+    private void OnTriggerEnter(Collider other) {
+        Destroy(other.gameObject);
+    }
 }

@@ -32,27 +32,29 @@ public class GameSlectionScene : MonoBehaviour
         playerNameCoinText.text = "Name: " + NameCoinData.PlayerNameData + "\nCoin: " + NameCoinData.PlayerCoinData;
     }
 
-  
-
     private void CharacterSetting()
     {
-        SceneManager.LoadScene(Conts.Scenes.CHARACTER_SETTİNG);
+        SceneLoadManager1.Instante.LoadScene(Conts.Scenes.CHARACTER_SETTİNG);
     }
     private void LoadScene()
     {
-        SceneManager.LoadScene(Conts.Scenes.LOGİN_SCENE);
+        SceneLoadManager1.Instante.LoadScene(Conts.Scenes.LOGİN_SCENE);
     }
 
+    #region Games
     private void Game1()
     {
-        SceneManager.LoadScene(Conts.Scenes.HELİX_JUMP_SCENE);
+        SceneLoadManager1.Instante.LoadScene(Conts.Scenes.HELİX_JUMP_SCENE);
+
     }
     private void Game2()
     {
-        SceneManager.LoadScene(Conts.Scenes.ENDLESS_JUMP_SCENE);
+        SceneLoadManager1.Instante.LoadScene(Conts.Scenes.ENDLESS_JUMP_SCENE);
+
     }
     private void Game3()
     {
-        SceneManager.LoadScene(Conts.Scenes.COLOR_RUN);
+        SceneLoadManager1.Instante.LoadScene(Conts.Scenes.COLOR_RUN);
     }
+    #endregion
 }

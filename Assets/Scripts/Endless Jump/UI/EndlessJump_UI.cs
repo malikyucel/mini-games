@@ -34,11 +34,11 @@ public class EndlessJump_UI : MonoBehaviour
     {
         menuPanel.transform.DOScale(Vector3.zero, 0.5F).From().SetEase(Ease.OutBack);
         menuPanel.SetActive(true);
-        Invoke(nameof(timeScene),0.4f);
+        Invoke(nameof(TimeScene),0.4f);
     }
     void ResetButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneLoadManager1.Instante.LoadScene(SceneManager.GetActiveScene().name);
         menuPanel.SetActive(false);
     }
     void ContinueButton()
@@ -48,9 +48,10 @@ public class EndlessJump_UI : MonoBehaviour
     }
     void ExetButton()
     {
-        SceneManager.LoadScene(Conts.Scenes.GAMES_SELECTİON_SCENE);
+        SceneLoadManager1.Instante.LoadScene(Conts.Scenes.GAMES_SELECTİON_SCENE);
     }
-    void timeScene()
+
+    void TimeScene()
     {
         Time.timeScale = 0f;
     }

@@ -5,14 +5,20 @@ using DG.Tweening;
 
 public class ColorRun : MonoBehaviour
 {
+    [Header("Colors Index Data")]
     [SerializeField] private List<Material> rendererMatariels;
+    [SerializeField] private string[] colorNames = {"Pink", "Orange", "Green", "Gray", "Black", "Red"};
+
+    [Header("Setting")]
+    [SerializeField] private List<GameObject> doorObjects;
     [SerializeField] private List<Material> selectColor;
     [SerializeField] private Renderer selectedObjectMatariel;
-    [SerializeField] private List<GameObject> doorObjects;
     [SerializeField] private int selectedIndexRenderer;
     [SerializeField] private int selcetedIndexObject;
+
+    [Header("UI")]
     [SerializeField] private TMP_Text ColorText;
-    [SerializeField] private string[] colorNames = {"Pink", "Orange", "Green", "Gray", "Black", "Red"};
+    
     private void Start()
     {
         selectedIndexRenderer = Random.Range(0,rendererMatariels.Count);

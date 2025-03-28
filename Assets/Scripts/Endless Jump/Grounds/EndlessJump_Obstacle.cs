@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EndlessJump_Obstacle : MonoBehaviour,IFunction
 {
@@ -15,6 +14,7 @@ public class EndlessJump_Obstacle : MonoBehaviour,IFunction
     [Header("Direction X")]
     private int moveX;
     int[] values = {-1,1};
+
     private void Start() 
     {
         target = GameObject.Find("Player").GetComponent<Transform>();  
@@ -34,6 +34,7 @@ public class EndlessJump_Obstacle : MonoBehaviour,IFunction
         }
         transform.Translate(moveX * speed * Time.deltaTime,0,0);
 
+        // MOve direction
         if(transform.position.x < -2)
         {
             moveX *= -1;
@@ -62,11 +63,7 @@ public class EndlessJump_Obstacle : MonoBehaviour,IFunction
         {
             playerCoin.PlayerCoinData -= deductCoin;
         }
-        StartCoroutine(SceneLoadTime());
+        SceneLoadManager1.Instante.LoadScene(Conts.Scenes.ENDLESS_JUMP_SCENE);
     }
-    IEnumerator SceneLoadTime()
-    {
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(Conts.Scenes.ENDLESS_JUMP_SCENE);
-    }
+    
 }

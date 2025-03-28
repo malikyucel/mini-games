@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InputScene : MonoBehaviour
@@ -23,6 +22,7 @@ public class InputScene : MonoBehaviour
         exitButton.onClick.AddListener(ExitButton);
         savePlayerButton.onClick.AddListener(SavePlayerButton);
         exitPanelButton.onClick.AddListener(ExitPanelButton);
+        
     }
     private void LoginButton()
     {
@@ -32,7 +32,7 @@ public class InputScene : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(2);
+            SceneLoadManager1.Instante.LoadScene(Conts.Scenes.GAMES_SELECTİON_SCENE);
         }
     }
     private void ExitButton()

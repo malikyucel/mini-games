@@ -1,22 +1,28 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 public class RoadSpawnManager : MonoBehaviour
 {
+    [Header("Reference")]
+    [SerializeField] private PlayerController playerController;
     [SerializeField] private Transform startPos;
     [SerializeField] private GameObject ColorPanel;
     [SerializeField] private GameObject[] roadObject;
+    [SerializeField] private SO playerData;
+
+    [Header("Setting")]
     [SerializeField] private float PosZColorPanel;
     [SerializeField] private float PosZColorPanel_2 = 28;
     [SerializeField] private float PosZRoad;
     [SerializeField] private float distance = 14;
-    [SerializeField] private SO playerData;
     [SerializeField] private int coinPlus;
     [SerializeField] private int reduceCoin;
+    
+    [Header("Audio")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip trueAudioClip;
     [SerializeField] AudioClip falseAudioClip;
-    [SerializeField] private PlayerController playerController;
+    
 
     public static RoadSpawnManager Instance;
     private void Awake() 
@@ -32,8 +38,6 @@ public class RoadSpawnManager : MonoBehaviour
 
     private void Start() 
     {
-        
-
         for(int i = 0; i < 15; i++)
         {
             RoadSpawn();
@@ -72,12 +76,12 @@ public class RoadSpawnManager : MonoBehaviour
 
     IEnumerator ScneLoadTime()
     {
+        SceneLoadManager1.Instante.LoadScene(Conts.Scenes.COLOR_RUN);
         audioSource.PlayOneShot(falseAudioClip);
         yield return new WaitForSeconds(2);
         if(playerData.PlayerCoinData > reduceCoin)
             playerData.PlayerCoinData -= reduceCoin;
         else
             playerData.PlayerCoinData = 0;
-        SceneManager.LoadScene(Conts.Scenes.COLOR_RUN);
     }
 }

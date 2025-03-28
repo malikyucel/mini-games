@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Characters : MonoBehaviour
@@ -66,7 +66,10 @@ public class Characters : MonoBehaviour
     }
     private void Update() 
     {
-
+        if(EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         if (Input.GetMouseButtonDown(0) && selectInActive)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -77,7 +80,7 @@ public class Characters : MonoBehaviour
                 if(hit.transform.CompareTag("Close"))
                 {
                     selectInActive = false;
-                    SceneManager.LoadScene(Conts.Scenes.GAMES_SELECTİON_SCENE);
+                    SceneLoadManager1.Instante.LoadScene(Conts.Scenes.GAMES_SELECTİON_SCENE);
                     return;
                 }
                 if(hit.transform.CompareTag("Character"))
@@ -95,6 +98,7 @@ public class Characters : MonoBehaviour
 
                     _selectedCharacterIndex = Instantiate(_selectCharacter);
                     _selectedCharacterIndex.transform.SetParent(selectionObjectPanelPos.transform);
+                    _selectedCharacterIndex.transform.DOScale(new Vector3(1,1,1), 0.5f).SetEase(Ease.OutBack);
                     _selectedCharacterIndex.transform.localPosition = new Vector3(.1f,0,-1);
 
                     UpdatePriceText(hit.transform.gameObject);

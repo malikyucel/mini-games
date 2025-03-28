@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,7 +31,7 @@ public class Ball_HelixJump : MonoBehaviour
             Invoke(nameof(RessetJump), 0.2f);
             IsJumping = false;
         }
-        if(other.gameObject.CompareTag("Interactive"))
+        else if(other.gameObject.CompareTag("Interactive"))
         {
             SliceSound.Instanse.RedSlice();
             if(playerCoinNameSO.PlayerCoinData < playerCoinReduce)
@@ -43,27 +42,16 @@ public class Ball_HelixJump : MonoBehaviour
             {
                 playerCoinNameSO.PlayerCoinData -= playerCoinReduce;
             }
-            StartCoroutine(InterfaceSceneTime());
+            SceneLoadManager1.Instante.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if(other.gameObject.CompareTag("Reset"))
         {
             SliceSound.Instanse.FinishSlice();
-            StartCoroutine(ResetSceneTime());
             playerCoinNameSO.PlayerCoinData += playerCoinPuls;
+            SceneLoadManager1.Instante.LoadScene(SceneManager.GetActiveScene().name);
         } 
     }
 
-    IEnumerator ResetSceneTime()
-    {
-        yield return new WaitForSeconds(0.2f);
-        playerCoinNameSO.PlayerCoinData += playerCoinPuls;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-    IEnumerator InterfaceSceneTime()
-    {
-        yield return new WaitForSeconds(0.2f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
     void RessetJump()
     {
         IsJumping = true;

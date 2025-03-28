@@ -7,6 +7,8 @@ public class EndlessJump_GroundManager : MonoBehaviour
     [SerializeField] private GameObject ground;
     [SerializeField] private GameObject obstacle;
     [SerializeField] private AudioSource audioSource;
+
+    [Header("Audio")]
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip dropSound;
 

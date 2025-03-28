@@ -10,6 +10,7 @@ public class EndlessJump_PlayerController : MonoBehaviour
     [SerializeField] private GameObject playerCharacters;
     [SerializeField] private float jumpForce;
     [SerializeField] private float speed;
+    [SerializeField] private float touchSpeed;
 
     [Header("Input")]
     [SerializeField] private float horizontalValue;
@@ -21,6 +22,39 @@ public class EndlessJump_PlayerController : MonoBehaviour
         playerCharacters.transform.SetParent(transform);
     }
     private void FixedUpdate() 
+    {
+        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+            KeyboardControl();
+
+
+        TouchController();
+
+        // Teleport to the other side
+        if(transform.position.x < -2.5f)
+        {
+            Vector3 targetPos = new Vector3(transform.position.x + 5, transform.position.y, transform.position.z);
+            transform.position = targetPos;
+        }
+        if(transform.position.x > 2.5f)
+        {
+            Vector3 targetPos = new Vector3(transform.position.x - 5, transform.position.y, transform.position.z);
+            transform.position = targetPos;
+        }
+    }
+    void TouchController()
+    {
+        if(Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if(touch.phase == TouchPhase.Moved)
+            {
+                float xPosition = touch.deltaPosition.x * touchSpeed * Time.deltaTime * -1;
+                transform.Translate(Time.deltaTime * speed * xPosition, 0, 0);
+            }
+        }
+    }
+    void KeyboardControl()
     {
         if(Input.GetKey(KeyCode.D))
         {
